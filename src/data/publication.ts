@@ -20,7 +20,7 @@ export const publicationData: Publication[] = [
     authors: "Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano, Shunya Nagashima",
     paperUrl: "https://arxiv.org/abs/2602.03858",
     codeUrl: "https://github.com/Neurogica/PENGUIN",
-    imageUrl: "/images/penguin.png",
+    imageUrl: "/images/PENGUIN.png",
   },
   {
     year: "2026",
