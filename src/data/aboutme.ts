@@ -8,6 +8,7 @@ export interface AboutMe {
   blogUrl?: string;
   cvUrl?: string;
   googleScholarUrl?: string;
+  orcidUrl?: string;
   twitterUsername?: string;
   githubUsername?: string;
   linkedinUsername?: string;
@@ -18,21 +19,20 @@ export interface AboutMe {
 }
 
 export const aboutMe: AboutMe = {
-  name: "Jane R. Smith",
-  title: "Ph.D. Candidate",
-  institution: "Stanford University",
+  name: "Shuntaro Suzuki",
+  title: "Master's Student",
+  institution: "Keio University, Japan",
   // Note that links work in the description
   description:
-    "I'm a final-year <a href='https://www.stanford.edu'>PhD candidate</a> working at the intersection of causal inference and machine learning. My research focuses on developing robust, interpretable systems that can reason about cause and effect in complex environments.",
-  email: "______@stanford.edu",
-  imageUrl:
-    "https://images.unsplash.com/photo-1581481615985-ba4775734a9b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  googleScholarUrl: "https://scholar.google.com/citations?user=bWtMl_MAAAAJ",
-  githubUsername: "janesmith",
-  linkedinUsername: "janesmith",
-  twitterUsername: "janesmith",
-  blogUrl: "https://",
-  cvUrl: "https://",
+    "I am a master’s student at Keio University in Japan, advised by <\a href=https://komeisugiura.jp/index_en.html>Prof. Komei Sugiura</a>. \nI received my bachelor’s degree in Information and Computer Science from Keio University. \n\nMy research interests include brain–computer interfaces and representation learning for physiological and neural signals.",
+  email: "shuntaro20021227@keio.jp",
+  imageUrl: "/images/profile.png",
+  googleScholarUrl: "https://scholar.google.com/citations?hl=ja&user=XcOzgnsAAAAJ",
+  githubUsername: "Shuntaro1227",
+  linkedinUsername: "shuntaro-suzuki-88005b3b0/",
+  twitterUsername: "ShuntaroSzk",
+  cvUrl: "/cv.pdf",
+  orcidUrl: "https://orcid.org/0009-0008-5564-3835",
   institutionUrl: "https://www.stanford.edu",
   // altName: "",
   // secretDescription: "I like dogs.",

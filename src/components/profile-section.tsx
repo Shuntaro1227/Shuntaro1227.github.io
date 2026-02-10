@@ -1,12 +1,17 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  ArrowUpRight,
-  GraduationCap,
-} from "lucide-react";
+  faEnvelope,
+  faGraduationCap,
+  faArrowRight,
+  faDownload,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faXTwitter,
+  faOrcid,
+} from "@fortawesome/free-brands-svg-icons";
 import { AboutMe } from "@/data/aboutme";
 
 interface ProfileSectionProps {
@@ -19,22 +24,22 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
   }
 
   return (
-    <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
+    <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-0 md:space-y-8">
       {aboutMe.imageUrl && (
         <div className="w-1/3 md:w-full flex-shrink-0">
-          <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4]">
+          <div className="relative max-h-[40vh] md:w-[55%] aspect-[3/4]">
             <Image
               src={aboutMe.imageUrl}
               alt={aboutMe.name}
               fill
               priority
-              className="object-cover rounded-xl"
+              className="object-cover rounded-lg"
             />
           </div>
         </div>
       )}
       <div className="w-2/3 md:w-full">
-        <h1 className="font-serif text-3xl font-light tracking-wide mb-3">
+        <h1 className="text-3xl font-light tracking-wide mb-3">
           {aboutMe.name}
         </h1>
         {aboutMe.altName && (
@@ -42,7 +47,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             {aboutMe.altName}
           </p>
         )}
-        <p className="text-zinc-600 text-xs leading-relaxed tracking-wide uppercase mb-6">
+        <p className="text-zinc-600 text-sm leading-relaxed tracking-wide mb-6">
           {aboutMe.title}
           <br />
           {aboutMe.institutionUrl ? (
@@ -66,9 +71,9 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
               />
               <span className="tracking-wider uppercase">Blog</span>
             </a>
@@ -76,15 +81,14 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           {aboutMe.cvUrl && (
             <a
               href={aboutMe.cvUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
+              download
+              className="group inline-flex items-center gap-0 text-sm px-4 py-1 bg-zinc-500 text-white rounded-md hover:bg-zinc-800 transition-colors duration-300"
             >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+              <FontAwesomeIcon
+                icon={faDownload}
+                className="w-3 h-3"
               />
-              <span className="tracking-wider uppercase">CV</span>
+              <span className="tracking-wider uppercase font-medium">CV</span>
             </a>
           )}
         </div>
@@ -95,8 +99,8 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Mail size={14} />
-            {aboutMe.email}
+            <FontAwesomeIcon icon={faEnvelope} className="w-3.5 h-3.5" />
+            Email
           </a>
           {aboutMe.googleScholarUrl && (
             <>
@@ -107,8 +111,22 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GraduationCap size={14} />
+                <FontAwesomeIcon icon={faGraduationCap} className="w-3.5 h-3.5" />
                 Google Scholar
+              </a>
+            </>
+          )}
+          {aboutMe.orcidUrl && (
+            <>
+              <br />
+              <a
+                href={`https://orcid.org/${aboutMe.orcidUrl}`}
+                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faOrcid} className="w-3.5 h-3.5" />
+                ORCiD
               </a>
             </>
           )}
@@ -116,12 +134,12 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             <>
               <br />
               <a
-                href={`https://twitter.com/${aboutMe.twitterUsername}`}
+                href={`https://x.com/${aboutMe.twitterUsername}`}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter size={14} />@{aboutMe.twitterUsername}
+                <FontAwesomeIcon icon={faXTwitter} className="w-3.5 h-3.5" />X
               </a>
             </>
           )}
@@ -134,8 +152,8 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={14} />
-                github.com/{aboutMe.githubUsername}
+                <FontAwesomeIcon icon={faGithub} className="w-3.5 h-3.5" />
+                GitHub
               </a>
             </>
           )}
@@ -148,8 +166,8 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={14} />
-                linkedin.com/in/{aboutMe.linkedinUsername}
+                <FontAwesomeIcon icon={faLinkedin} className="w-3.5 h-3.5" />
+                LinkedIn
               </a>
             </>
           )}

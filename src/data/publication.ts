@@ -1,10 +1,11 @@
 export interface Publication {
   year: string;
-  conference: string;
+  conference?: string;
   title: string;
   authors: string;
   paperUrl?: string;
   codeUrl?: string;
+  projectPageUrl?: string;
   bibtex?: string;
   tldr?: string;
   imageUrl?: string;
@@ -12,28 +13,46 @@ export interface Publication {
 }
 
 export const publicationData: Publication[] = [
-  // If you don't want to show publications, just make the array empty.
   {
-    year: "2024",
-    conference: "NeurIPS",
-    title: "Scalable Causal Discovery in High-Dimensional Time Series",
-    authors: "Jane Smith, Sarah Johnson, Yue Zhang",
-    paperUrl: "https://arxiv.org/abs/2409.15476",
-    codeUrl: "https://github.com/jsmith/scalable-causal-discovery",
-    //bibtex: "https://arxiv.org/abs/2409.15476.bib",
-    tldr: "Using causal discovery to find the causal structure of high-dimensional time series data.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1561622539-dffbfc2008fd?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    award: "🏆 Best Paper Award",
-    // if you have an image in public/images, you can use it like this:
-    // imageUrl: "/images/publication-image.jpg"
+    year: "2026",
+    conference: "ICASSP",
+    title: "PENGUIN: General Vital Sign Reconstruction from PPG with Flow Matching State Space Model",
+    authors: "Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano, Shunya Nagashima",
+    paperUrl: "https://arxiv.org/abs/2602.03858",
+    codeUrl: "https://github.com/Neurogica/PENGUIN",
+    imageUrl: "/images/penguin.png",
   },
   {
-    year: "2023",
-    conference: "ICML",
-    title: "Robust Causal Discovery Under Distribution Shift",
-    authors: "Jane Smith, Xue Chen, Sarah Johnson",
-    paperUrl: "https://arxiv.org/abs/2302.13095",
-    codeUrl: "https://github.com/jsmith/robust-causal-discovery",
+    year: "2026",
+    conference: "ICASSP",
+    title: "A Decomposition-based State Space Model for Multivariate Time-Series Forecasting",
+    authors: "Shunya Nagashima, Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano",
+    paperUrl: "https://arxiv.org/abs/2602.05389",
+    codeUrl: "https://github.com/Neurogica/DecompSSM",
+    imageUrl: "/images/DecompSSM.png",
+  },
+  {
+    year: "2026",
+    conference: "ICASSP",
+    title: "Condition-Invariant fMRI Decoding of Speech Intelligibility with Deep State Space Model",
+    authors: "Ching-Chih Sung*, Shuntaro Suzuki*, Francis Pingfan Chien, Komei Sugiura, Yu Tsao (*Equal contribution)",
+    paperUrl: "https://arxiv.org/abs/2511.01868",
+    imageUrl: "/images/fMRI_intellig.png",
+  },
+  {
+    year: "2025",
+    conference: "Preprint",
+    title: "Cortical-SSM: A Deep State Space Model for EEG and ECoG Motor Imagery Decoding",
+    authors: "Shuntaro Suzuki, Shunya Nagashima, Masayuki Hirata, Komei Sugiura",
+    paperUrl: "https://arxiv.org/abs/2510.15371",
+    imageUrl: "/images/CorticalSSM.png",
+  },
+  {
+    year: "2024",
+    conference: "Frontiers in Neuroergonomics",
+    title: "Pretraining alpha rhythm enhancement by neurofeedback facilitates short-term perceptual learning and improves visual acuity by facilitated consolidation",
+    authors: "Ming Chang, Shuntaro Suzuki, Takahiro Kurose, Takuya Ibaraki",
+    paperUrl: "https://www.frontiersin.org/journals/neuroergonomics/articles/10.3389/fnrgo.2024.1399578/full",
+    imageUrl: "/images/alpha_rhythm.png",
   },
 ];
