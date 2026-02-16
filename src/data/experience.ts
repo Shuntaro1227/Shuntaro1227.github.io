@@ -28,7 +28,7 @@ export const experienceData: Experience[] = [
     date: "May 2022 - Oct. 2024",
     title: "Research Intern",
     company: "NTT DATA INSTITUTE OF MANAGEMENT CONSULTING, Inc., Japan",
-    companyUrl: "https://google.com",
+    companyUrl: "https://www.nttdata-strategy.com/en/",
     logoUrl: "/images/nttdata_icon.png",
   },
 ];
