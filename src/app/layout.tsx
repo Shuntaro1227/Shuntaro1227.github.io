@@ -26,16 +26,28 @@ const ptSerif = PT_Serif({
 });
 
 function stripHtmlTags(html: string): string {
-  let text = html.replace(/<\s*a\s+[^>]*>([^<]*)<\s*\/\s*a\s*>/gi, '$1');
+  let text = html.replace(/<\\?\s*a\s+[^>]*>([^<]*)<\\?\s*\/\s*a\s*>/gi, '$1');
   text = text.replace(/<[^>]*>/g, '');
   text = text.replace(/\n/g, ' ');
   text = text.replace(/\s+/g, ' ').trim();
   return text;
 }
 
+const cleanDescription = customMetadata.description || (aboutMe.description ? stripHtmlTags(aboutMe.description) : undefined);
+
 export const metadata: Metadata = {
   title: customMetadata.title || aboutMe.name,
-  description: customMetadata.description || (aboutMe.description ? stripHtmlTags(aboutMe.description) : undefined),
+  description: cleanDescription,
+  openGraph: {
+    title: customMetadata.title || aboutMe.name,
+    description: cleanDescription,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: customMetadata.title || aboutMe.name,
+    description: cleanDescription,
+  },
   icons: {
     icon: "/favicon.ico",
   },
