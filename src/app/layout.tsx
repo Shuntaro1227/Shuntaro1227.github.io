@@ -25,9 +25,17 @@ const ptSerif = PT_Serif({
   weight: ["400", "700"],
 });
 
+function stripHtmlTags(html: string): string {
+  let text = html.replace(/<\s*a\s+[^>]*>([^<]*)<\s*\/\s*a\s*>/gi, '$1');
+  text = text.replace(/<[^>]*>/g, '');
+  text = text.replace(/\n/g, ' ');
+  text = text.replace(/\s+/g, ' ').trim();
+  return text;
+}
+
 export const metadata: Metadata = {
   title: customMetadata.title || aboutMe.name,
-  description: customMetadata.description || aboutMe.description,
+  description: customMetadata.description || (aboutMe.description ? stripHtmlTags(aboutMe.description) : undefined),
   icons: {
     icon: "/favicon.ico",
   },
