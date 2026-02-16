@@ -12,7 +12,7 @@ export interface Experience {
 export const experienceData: Experience[] = [
   {
     date: "Jan. 2025 - Present",
-    title: "Software Engineer",
+    title: "ML Engineer",
     company: "Suntory Global Innovation Center Limited, Japan",
     companyUrl: "https://www.suntory.co.jp/sic/",
     logoUrl: "/images/suntory_icon.png",
