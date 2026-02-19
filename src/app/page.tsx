@@ -6,6 +6,8 @@ import { NewsEntry } from "@/components/news-entry";
 import { newsData } from "@/data/news";
 import { ExperienceEntry } from "@/components/experience-entry";
 import { experienceData } from "@/data/experience";
+import { AwardEntry } from "@/components/award-entry";
+import { awardsData } from "@/data/awards";
 import { sectionOrder, Section } from "@/data/section-order";
 
 export default function Home() {
@@ -71,6 +73,21 @@ export default function Home() {
                                 <div className="h-px bg-zinc-200 my-4" />
                               )}
                             </div>
+                          ))}
+                        </div>
+                      </section>
+                    )
+                  );
+                case Section.Awards:
+                  return (
+                    awardsData.length > 0 && (
+                      <section key={sectionName}>
+                        <h2 className="text-xl mb-6 tracking-wide uppercase">
+                          Awards
+                        </h2>
+                        <div className="space-y-12">
+                          {awardsData.map((award, index) => (
+                            <AwardEntry key={index} award={award} />
                           ))}
                         </div>
                       </section>
