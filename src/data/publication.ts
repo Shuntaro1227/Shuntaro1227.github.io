@@ -15,6 +15,14 @@ export interface Publication {
 export const publicationData: Publication[] = [
   {
     year: "2026",
+    conference: "ICPR",
+    title: "ABMAMBA: Multimodal Large Language Model with Aligned Hierarchical Bidirectional Scan for Efficient Video Captioning",
+    authors: "Daichi Yashima, Shuhei Kurita, Yusuke Oda, Shuntaro Suzuki, Seitaro Otsuki, Komei Sugiura",
+    paperUrl: "https://arxiv.org/abs/2604.08050",
+    imageUrl: "/images/ABMAMBA.png",
+  },
+  {
+    year: "2026",
     conference: "ICASSP",
     title: "PENGUIN: General Vital Sign Reconstruction from PPG with Flow Matching State Space Model",
     authors: "Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano, Shunya Nagashima",
@@ -35,7 +43,7 @@ export const publicationData: Publication[] = [
     year: "2026",
     conference: "ICASSP",
     title: "Condition-Invariant fMRI Decoding of Speech Intelligibility with Deep State Space Model",
-    authors: "Ching-Chih Sung*, Shuntaro Suzuki*, Francis Pingfan Chien, Komei Sugiura, Yu Tsao (*Equal contribution)",
+    authors: "Ching-Chih Sung*, Shuntaro Suzuki*, Francis Pingfan Chien*, Komei Sugiura, Yu Tsao (*Equal contribution)",
     paperUrl: "https://arxiv.org/abs/2511.01868",
     imageUrl: "/images/fMRI_intellig.png",
   },
