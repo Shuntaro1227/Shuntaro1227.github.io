@@ -19,7 +19,7 @@ function formatAuthors(authors: string, nameToBold: string): React.ReactNode {
         <>
           {parts.map((part, index) =>
             part === name ? (
-              <strong key={index} className="font-bold">{part}</strong>
+              <strong key={index} className="font-bold underline">{part}</strong>
             ) : (
               <span key={index}>{part}</span>
             )

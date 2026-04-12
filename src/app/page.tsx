@@ -1,14 +1,11 @@
-import { PublicationEntry } from "@/components/publication-entry";
 import { publicationData } from "@/data/publication";
 import { ProfileSection } from "@/components/profile-section";
 import { aboutMe } from "@/data/aboutme";
 import { NewsEntry } from "@/components/news-entry";
 import { newsData } from "@/data/news";
-import { ExperienceEntry } from "@/components/experience-entry";
 import { experienceData } from "@/data/experience";
-import { AwardEntry } from "@/components/award-entry";
 import { awardsData } from "@/data/awards";
-import { sectionOrder, Section } from "@/data/section-order";
+import { TabbedSection } from "@/components/tabbed-section";
 
 export default function Home() {
   return (
@@ -37,84 +34,28 @@ export default function Home() {
               </section>
             )}
 
-            {/* Map through sectionOrder to render sections in correct order */}
-            {sectionOrder.map((sectionName) => {
-              // Most of this is redundant... but in case it needs to be unique.
-              switch (sectionName) {
-                case Section.News:
-                  return (
-                    newsData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="text-l mb-12 tracking-wide uppercase">
-                          News
-                        </h2>
-                        <div className="space-y-12">
-                          {newsData.map((news, index) => (
-                            <div key={index}>
-                              <NewsEntry news={news} />
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Publication:
-                  return (
-                    publicationData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="text-xl mb-6 tracking-wide uppercase">
-                          Publications
-                        </h2>
-                        <div className="space-y-6">
-                          {publicationData.map((publication, index) => (
-                            <div key={index}>
-                              <PublicationEntry publication={publication} />
-                              {index < publicationData.length - 1 && (
-                                <div className="h-px bg-zinc-200 my-4" />
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Awards:
-                  return (
-                    awardsData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="text-xl mb-6 tracking-wide uppercase">
-                          Awards
-                        </h2>
-                        <div className="space-y-12">
-                          {awardsData.map((award, index) => (
-                            <AwardEntry key={index} award={award} />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Experience:
-                  return (
-                    experienceData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="text-xl mb-6 tracking-wide uppercase">
-                          Experience
-                        </h2>
-                        <div className="space-y-12">
-                          {experienceData.map((experience, index) => (
-                            <ExperienceEntry
-                              key={index}
-                              experience={experience}
-                            />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                default:
-                  return null;
-              }
-            })}
+            {/* News section */}
+            {newsData.length > 0 && (
+              <section>
+                <h2 className="text-l mb-12 tracking-wide uppercase">
+                  News
+                </h2>
+                <div className="space-y-12">
+                  {newsData.map((news, index) => (
+                    <div key={index}>
+                      <NewsEntry news={news} />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Tabbed sections: Publications / Awards / Experience */}
+            <TabbedSection
+              publicationData={publicationData}
+              awardsData={awardsData}
+              experienceData={experienceData}
+            />
           </div>
         </div>
       </div>
