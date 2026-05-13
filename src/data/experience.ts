@@ -18,6 +18,13 @@ export const experienceData: Experience[] = [
     logoUrl: "/images/suntory_icon.png",
   },
   {
+    date: "Jun. 2025 - Present",
+    title: "Research Intern",
+    company: "Neurogica Inc., Japan",
+    companyUrl: "https://www.neurogica.com/",
+    logoUrl: "/images/neurogica_icon.png",
+  },
+  {
     date: "Aug. 2025 - Sep. 2025",
     title: "Research Intern",
     company: "Academia Sinica, Taiwan",

@@ -24,7 +24,7 @@ export const aboutMe: AboutMe = {
   institution: "Keio University, Japan",
   // Note that links work in the description
   description:
-    "I am a master’s student at Keio University in Japan, advised by <\a href=https://komeisugiura.jp/index_en.html>Prof. Komei Sugiura</a>. \nI received my bachelor’s degree in Information and Computer Science from Keio University. \n\nMy research interests include brain–computer interfaces and representation learning for physiological and neural signals.",
+    "I am a master’s student at Keio University, Japan, advised by <\a href=https://komeisugiura.jp/index_en.html>Prof. Komei Sugiura</a>. \nI received my bachelor’s degree in Information and Computer Science from Keio University. \n\nMy research interest lie in representation learning and foundation models for neural signals, with the goal of decoding the human language network and advancing brain–computer interfaces.",
   email: "shuntaro20021227@keio.jp",
   imageUrl: "/images/profile.png",
   googleScholarUrl: "https://scholar.google.com/citations?hl=ja&user=XcOzgnsAAAAJ",
