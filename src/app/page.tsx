@@ -17,7 +17,7 @@ export default function Home() {
           {/* Left Column - Fixed Info */}
           <div className="col-span-12 md:col-span-3 space-y-12 mb-8 md:mb-0">
             {/* Profile */}
-            <div className="md:sticky top-12 space-y-8">
+            <div className="md:sticky top-24 space-y-8">
               <ProfileSection aboutMe={aboutMe} />
             </div>
           </div>
@@ -26,7 +26,7 @@ export default function Home() {
           <div className="col-span-12 md:col-span-8 md:col-start-4 space-y-12">
             {/* About section is typically first */}
             {aboutMe.description && (
-              <section className="max-w-2xl">
+              <section>
                 <p
                   className="text-mb leading-relaxed text-zinc-700 whitespace-pre-line [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
                   dangerouslySetInnerHTML={{ __html: aboutMe.description }}

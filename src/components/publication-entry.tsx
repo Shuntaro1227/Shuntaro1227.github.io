@@ -40,7 +40,7 @@ export function PublicationEntry({
   return (
     <div className="flex flex-col sm:flex-row gap-2">
       {publication.imageUrl && (
-        <div className="w-full sm:w-[40%] relative rounded-lg">
+        <div className="w-full sm:w-[35%] relative rounded-lg">
           <Image
             src={publication.imageUrl}
             alt={publication.title}
@@ -61,8 +61,8 @@ export function PublicationEntry({
             </div>
           )}
         </div>
-        <h3 className="text-md mb-3">{publication.title}</h3>
-        <p className="text-sm text-zinc-600 mb-4">
+        <h3 className="text-md mb-1">{publication.title}</h3>
+        <p className="text-sm text-zinc-600 mb-2">
           {formatAuthors(publication.authors, aboutMe.name)}
         </p>
         <div className="flex flex-row items-center gap-2">

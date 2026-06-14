@@ -32,7 +32,8 @@ export function TabbedSection({
   return (
     <div>
       {/* Tab Headers */}
-      <div className="sticky top-0 z-10 bg-[#FFFEF8] flex gap-2 mb-8 py-3">
+      <div className="hidden md:block sticky top-0 z-20 h-24 -mb-24 bg-[#FFFEF8] pointer-events-none" />
+      <div className="sticky top-0 md:top-24 z-30 bg-[#FFFEF8] flex gap-2 mb-8 py-3">
         {tabs.map((tab) => (
           <button
             key={tab.id}

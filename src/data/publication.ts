@@ -15,6 +15,15 @@ export interface Publication {
 export const publicationData: Publication[] = [
   {
     year: "2026",
+    conference: "INTERSPEECH",
+    title: "ELSA: Acoustic Event-Level Semantic Alignment for Fine-Grained Reference-Free Text-to-Audio Evaluation",
+    authors: "Shuntaro Suzuki*, Kento Tokura*, Daichi Yashima*, Kanon Amemiya*, Komei Sugiura, Shinnosuke Takamichi (*Equal contribution)",
+    projectPageUrl: "https://elsa-projectpage.pages.dev/",
+    codeUrl: "https://github.com/kento2247/ELSA",
+    imageUrl: "/images/ELSA.png",
+  },
+  {
+    year: "2026",
     conference: "ICPR",
     title: "ABMAMBA: Multimodal Large Language Model with Aligned Hierarchical Bidirectional Scan for Efficient Video Captioning",
     authors: "Daichi Yashima, Shuhei Kurita, Yusuke Oda, Shuntaro Suzuki, Seitaro Otsuki, Komei Sugiura",
