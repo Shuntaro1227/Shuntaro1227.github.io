@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { PublicationEntry } from "@/components/publication-entry";
 import { ExperienceEntry } from "@/components/experience-entry";
 import { AwardEntry } from "@/components/award-entry";
@@ -22,6 +22,9 @@ export function TabbedSection({
   experienceData,
 }: TabbedSectionProps) {
   const [activeTab, setActiveTab] = useState<Tab>("publications");
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const keepTabsPinnedRef = useRef(false);
+  const desktopStickyOffset = 96;
 
   const tabs: { id: Tab; label: string }[] = [
     { id: "publications", label: "Publications" },
@@ -29,15 +32,39 @@ export function TabbedSection({
     { id: "experience", label: "Experience" },
   ];
 
+  const getStickyOffset = () =>
+    window.matchMedia("(min-width: 768px)").matches ? desktopStickyOffset : 0;
+
+  const handleTabChange = (tab: Tab) => {
+    const sectionTop = sectionRef.current?.getBoundingClientRect().top ?? 0;
+    const stickyOffset = getStickyOffset();
+
+    keepTabsPinnedRef.current = sectionTop <= stickyOffset;
+    setActiveTab(tab);
+  };
+
+  useLayoutEffect(() => {
+    if (!keepTabsPinnedRef.current || !sectionRef.current) {
+      return;
+    }
+
+    const stickyOffset = getStickyOffset();
+    const sectionTop = sectionRef.current.getBoundingClientRect().top;
+
+    window.scrollTo({
+      top: window.scrollY + sectionTop - stickyOffset,
+      behavior: "auto",
+    });
+  }, [activeTab]);
+
   return (
-    <div>
+    <div ref={sectionRef}>
       {/* Tab Headers */}
-      <div className="hidden md:block sticky top-0 z-20 h-24 -mb-24 bg-[#FFFEF8] pointer-events-none" />
       <div className="sticky top-0 md:top-24 z-30 bg-[#FFFEF8] flex gap-2 mb-8 py-3">
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => handleTabChange(tab.id)}
             className={`px-4 py-1.5 rounded-full text-sm tracking-wide uppercase transition-all duration-200 ${
               activeTab === tab.id
                 ? "bg-zinc-500 text-white font-medium"
@@ -50,34 +77,36 @@ export function TabbedSection({
       </div>
 
       {/* Tab Content */}
-      {activeTab === "publications" && publicationData.length > 0 && (
-        <div className="space-y-6">
-          {publicationData.map((publication, index) => (
-            <div key={index}>
-              <PublicationEntry publication={publication} />
-              {index < publicationData.length - 1 && (
-                <div className="h-px bg-zinc-200 my-4" />
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="min-h-[calc(100vh-9rem)]">
+        {activeTab === "publications" && publicationData.length > 0 && (
+          <div className="space-y-6">
+            {publicationData.map((publication, index) => (
+              <div key={index}>
+                <PublicationEntry publication={publication} />
+                {index < publicationData.length - 1 && (
+                  <div className="h-px bg-zinc-200 my-4" />
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
-      {activeTab === "awards" && awardsData.length > 0 && (
-        <div className="space-y-12">
-          {awardsData.map((award, index) => (
-            <AwardEntry key={index} award={award} />
-          ))}
-        </div>
-      )}
+        {activeTab === "awards" && awardsData.length > 0 && (
+          <div className="space-y-12">
+            {awardsData.map((award, index) => (
+              <AwardEntry key={index} award={award} />
+            ))}
+          </div>
+        )}
 
-      {activeTab === "experience" && experienceData.length > 0 && (
-        <div className="space-y-12">
-          {experienceData.map((experience, index) => (
-            <ExperienceEntry key={index} experience={experience} />
-          ))}
-        </div>
-      )}
+        {activeTab === "experience" && experienceData.length > 0 && (
+          <div className="space-y-12">
+            {experienceData.map((experience, index) => (
+              <ExperienceEntry key={index} experience={experience} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

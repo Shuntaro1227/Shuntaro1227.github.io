@@ -10,6 +10,7 @@ import { TabbedSection } from "@/components/tabbed-section";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFFEF8]">
+      <div className="hidden md:block fixed inset-x-0 top-0 z-20 h-24 bg-[#FFFEF8] pointer-events-none" />
       {/* Don't have a great call on whether max-w-screen-xl is better */}
       <div className="max-w-screen-xl mx-auto px-8 py-24">
         {/* Grid Layout */}
