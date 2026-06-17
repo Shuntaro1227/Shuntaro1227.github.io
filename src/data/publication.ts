@@ -18,6 +18,7 @@ export const publicationData: Publication[] = [
     conference: "INTERSPEECH",
     title: "ELSA: Acoustic Event-Level Semantic Alignment for Fine-Grained Reference-Free Text-to-Audio Evaluation",
     authors: "Shuntaro Suzuki*, Kento Tokura*, Daichi Yashima*, Kanon Amemiya*, Komei Sugiura, Shinnosuke Takamichi (*Equal contribution)",
+    paperUrl: "https://arxiv.org/abs/2606.17404",
     projectPageUrl: "https://elsa-projectpage.pages.dev/",
     codeUrl: "https://github.com/kento2247/ELSA",
     imageUrl: "/images/ELSA.png",
