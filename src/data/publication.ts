@@ -58,11 +58,11 @@ export const publicationData: Publication[] = [
     imageUrl: "/images/fMRI_intellig.png",
   },
   {
-    year: "2025",
-    conference: "Preprint",
-    title: "Cortical-SSM: A Deep State Space Model for EEG and ECoG Motor Imagery Decoding",
-    authors: "Shuntaro Suzuki, Shunya Nagashima, Masayuki Hirata, Komei Sugiura",
-    paperUrl: "https://arxiv.org/abs/2510.15371",
+    year: "2026",
+    conference: "Journal of Neural Engineering",
+    title: "Cortical-SSM: A Deep State Space Model for Motor Imagery Decoding from EEG Signals",
+    authors: "Shuntaro Suzuki, Shunya Nagashima, Komei Sugiura",
+    paperUrl: "https://iopscience.iop.org/article/10.1088/1741-2552/ae89e8",
     imageUrl: "/images/CorticalSSM.png",
   },
   {
