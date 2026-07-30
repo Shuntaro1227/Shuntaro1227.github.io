@@ -33,7 +33,7 @@ export const publicationData: Publication[] = [
   },
   {
     year: "2026",
-    conference: "ICASSP",
+    conference: "IEEE ICASSP",
     title: "PENGUIN: General Vital Sign Reconstruction from PPG with Flow Matching State Space Model",
     authors: "Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano, Shunya Nagashima",
     paperUrl: "https://arxiv.org/abs/2602.03858",
@@ -42,7 +42,7 @@ export const publicationData: Publication[] = [
   },
   {
     year: "2026",
-    conference: "ICASSP",
+    conference: "IEEE ICASSP",
     title: "A Decomposition-based State Space Model for Multivariate Time-Series Forecasting",
     authors: "Shunya Nagashima, Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano",
     paperUrl: "https://arxiv.org/abs/2602.05389",
@@ -51,7 +51,7 @@ export const publicationData: Publication[] = [
   },
   {
     year: "2026",
-    conference: "ICASSP",
+    conference: "IEEE ICASSP",
     title: "Condition-Invariant fMRI Decoding of Speech Intelligibility with Deep State Space Model",
     authors: "Ching-Chih Sung*, Shuntaro Suzuki*, Francis Pingfan Chien*, Komei Sugiura, Yu Tsao (*Equal contribution)",
     paperUrl: "https://arxiv.org/abs/2511.01868",
