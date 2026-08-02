@@ -33,7 +33,7 @@ export const aboutMe: AboutMe = {
   twitterUsername: "ShuntaroSzk",
   cvUrl: "/cv.pdf",
   orcidUrl: "https://orcid.org/0009-0008-5564-3835",
-  institutionUrl: "https://www.stanford.edu",
+  institutionUrl: "https://www.keio.ac.jp/en/",
   // altName: "",
   // secretDescription: "I like dogs.",
 };
