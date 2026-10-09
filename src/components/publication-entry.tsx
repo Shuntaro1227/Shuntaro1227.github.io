@@ -3,6 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 import { Publication } from "@/data/publication";
 import { aboutMe } from "@/data/aboutme";
 
+const VIDEO_FILE_PATTERN = /\.(mp4|webm|ogg)(?:[?#]|$)/i;
+
 function formatAuthors(authors: string, nameToBold: string): React.ReactNode {
   const namesToBold = [nameToBold];
   if (aboutMe.altName) {
@@ -37,17 +39,34 @@ export function PublicationEntry({
 }: {
   publication: Publication;
 }) {
+  const isVideo = publication.mediaUrl
+    ? VIDEO_FILE_PATTERN.test(publication.mediaUrl)
+    : false;
+
   return (
     <div className="flex flex-col sm:flex-row gap-2">
-      {publication.imageUrl && (
+      {publication.mediaUrl && (
         <div className="w-full sm:w-[35%] relative rounded-lg">
-          <Image
-            src={publication.imageUrl}
-            alt={publication.title}
-            width={800}
-            height={600}
-            className="w-full h-auto object-contain rounded-lg transition-all duration-300 p-2"
-          />
+          {isVideo ? (
+            <video
+              src={publication.mediaUrl}
+              aria-label={publication.title}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-auto object-contain rounded-lg transition-all duration-300 p-2"
+            />
+          ) : (
+            <Image
+              src={publication.mediaUrl}
+              alt={publication.title}
+              width={800}
+              height={600}
+              className="w-full h-auto object-contain rounded-lg transition-all duration-300 p-2"
+            />
+          )}
         </div>
       )}
       <div className="flex flex-col flex-1">

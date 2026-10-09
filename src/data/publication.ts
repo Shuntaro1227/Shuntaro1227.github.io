@@ -8,11 +8,20 @@ export interface Publication {
   projectPageUrl?: string;
   bibtex?: string;
   tldr?: string;
-  imageUrl?: string;
+  mediaUrl?: string;
   award?: string;
 }
 
 export const publicationData: Publication[] = [
+  {
+    year: "2026",
+    conference: "preprint",
+    title: "CANDLE: Cortical Null-Space Decomposition for Noninvasive Brain Source Imaging",
+    authors: "Shuntaro Suzuki, Yuiga Wada, Komei Sugiura",
+    paperUrl: "https://arxiv.org/abs/2610.07824",
+    projectPageUrl: "https://candle-esi.pages.dev/",
+    mediaUrl: "/images/CANDLE.mp4",
+  },
   {
     year: "2026",
     conference: "INTERSPEECH",
@@ -21,7 +30,7 @@ export const publicationData: Publication[] = [
     paperUrl: "https://arxiv.org/abs/2606.17404",
     projectPageUrl: "https://elsa-projectpage.pages.dev/",
     codeUrl: "https://github.com/kento2247/ELSA",
-    imageUrl: "/images/ELSA.png",
+    mediaUrl: "/images/ELSA.png",
   },
   {
     year: "2026",
@@ -29,7 +38,7 @@ export const publicationData: Publication[] = [
     title: "ABMAMBA: Multimodal Large Language Model with Aligned Hierarchical Bidirectional Scan for Efficient Video Captioning",
     authors: "Daichi Yashima, Shuhei Kurita, Yusuke Oda, Shuntaro Suzuki, Seitaro Otsuki, Komei Sugiura",
     paperUrl: "https://arxiv.org/abs/2604.08050",
-    imageUrl: "/images/ABMAMBA.png",
+    mediaUrl: "/images/ABMAMBA.png",
   },
   {
     year: "2026",
@@ -38,7 +47,7 @@ export const publicationData: Publication[] = [
     authors: "Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano, Shunya Nagashima",
     paperUrl: "https://arxiv.org/abs/2602.03858",
     codeUrl: "https://github.com/Neurogica/PENGUIN",
-    imageUrl: "/images/PENGUIN.png",
+    mediaUrl: "/images/PENGUIN.png",
   },
   {
     year: "2026",
@@ -47,7 +56,7 @@ export const publicationData: Publication[] = [
     authors: "Shunya Nagashima, Shuntaro Suzuki, Shuitsu Koyama, Shinnosuke Hirano",
     paperUrl: "https://arxiv.org/abs/2602.05389",
     codeUrl: "https://github.com/Neurogica/DecompSSM",
-    imageUrl: "/images/DecompSSM.png",
+    mediaUrl: "/images/DecompSSM.png",
   },
   {
     year: "2026",
@@ -55,7 +64,7 @@ export const publicationData: Publication[] = [
     title: "Condition-Invariant fMRI Decoding of Speech Intelligibility with Deep State Space Model",
     authors: "Ching-Chih Sung*, Shuntaro Suzuki*, Francis Pingfan Chien*, Komei Sugiura, Yu Tsao (*Equal contribution)",
     paperUrl: "https://arxiv.org/abs/2511.01868",
-    imageUrl: "/images/fMRI_intellig.png",
+    mediaUrl: "/images/fMRI_intellig.png",
   },
   {
     year: "2026",
@@ -63,7 +72,7 @@ export const publicationData: Publication[] = [
     title: "Cortical-SSM: A Deep State Space Model for Motor Imagery Decoding from EEG Signals",
     authors: "Shuntaro Suzuki, Shunya Nagashima, Komei Sugiura",
     paperUrl: "https://iopscience.iop.org/article/10.1088/1741-2552/ae89e8",
-    imageUrl: "/images/CorticalSSM.png",
+    mediaUrl: "/images/CorticalSSM.png",
   },
   {
     year: "2024",
@@ -71,6 +80,6 @@ export const publicationData: Publication[] = [
     title: "Pretraining alpha rhythm enhancement by neurofeedback facilitates short-term perceptual learning and improves visual acuity by facilitated consolidation",
     authors: "Ming Chang, Shuntaro Suzuki, Takahiro Kurose, Takuya Ibaraki",
     paperUrl: "https://www.frontiersin.org/journals/neuroergonomics/articles/10.3389/fnrgo.2024.1399578/full",
-    imageUrl: "/images/alpha_rhythm.png",
+    mediaUrl: "/images/alpha_rhythm.png",
   },
 ];
