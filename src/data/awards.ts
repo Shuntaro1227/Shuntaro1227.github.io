@@ -17,7 +17,7 @@ export const awardsData: Award[] = [
     {
         date: "Aug. 2025 - Sep. 2025",
         title: "The PNPL Competition, NeurIPS 2025",
-        description: "2nd Place, Phoneme Classification Task (Standard Track, $1,000 Prize)",
+        description: "2nd Place, Phoneme Classification Task (Standard Track, USD $1K Prize)",
         link: "https://neural-processing-lab.github.io/2025-libribrain-competition/",
         logoUrl: "/images/pnpl_logo.png",
     },
