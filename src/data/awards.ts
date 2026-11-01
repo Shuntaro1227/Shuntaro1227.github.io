@@ -10,7 +10,7 @@ export const awardsData: Award[] = [
     {
         date: "Sep. 2027 - Aug. 2029",
         title: "Funai Overseas Scholarship",
-        description: "USD $50K/yr for two years ($36K/yr stipend + ~$14K/yr tuition + full medical insurance)",
+        description: "USD $150K over three years ($36K/yr stipend + ~$14K/yr tuition + full medical insurance)",
         link: "https://funaifoundation.jp/",
         logoUrl: "/images/funai_logo.jpg",
     },
