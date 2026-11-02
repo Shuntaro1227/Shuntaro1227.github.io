@@ -8,7 +8,7 @@ export interface Award {
 
 export const awardsData: Award[] = [
     {
-        date: "Sep. 2027 - Aug. 2029",
+        date: "Sep. 2027 - Aug. 2030",
         title: "Funai Overseas Scholarship",
         description: "USD $150K over three years ($36K/yr stipend + ~$14K/yr tuition + full medical insurance)",
         link: "https://funaifoundation.jp/",
